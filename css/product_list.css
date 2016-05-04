@@ -186,7 +186,7 @@ ul.product_list.grid > li {
             color: #b1b0b0; }
     ul.product_list.grid > li .product-container h5 {
       padding: 0 15px 7px 15px;
-      min-height: 53px; }
+      /*min-height: 53px; }*/
     @media (min-width: 1200px) {
       ul.product_list.grid > li .product-container .comments_note {
         display: none; } }

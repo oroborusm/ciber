@@ -64,7 +64,7 @@
 						</a>
 						{/if}
 						{if (!$PS_CATALOG_MODE && ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
-							<div class="content_price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+							<div class="content_pricee" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 								{if isset($product.show_price) && $product.show_price && !isset($restricted_country_mode)}
 									<span itemprop="price" class="price product-price">
 										{hook h="displayProductPriceBlock" product=$product type="before_price"}
@@ -150,7 +150,7 @@
 						{/if}
 					</div>
 					{/if}
-					<div class="button-container">
+					<div class="button-containerr">
 						{if ($product.id_product_attribute == 0 || (isset($add_prod_display) && ($add_prod_display == 1))) && $product.available_for_order && !isset($restricted_country_mode) && $product.customizable != 2 && !$PS_CATALOG_MODE}
 							{if (!isset($product.customization_required) || !$product.customization_required) && ($product.allow_oosp || $product.quantity > 0)}
 								{capture}add=1&amp;id_product={$product.id_product|intval}{if isset($product.id_product_attribute) && $product.id_product_attribute}&amp;ipa={$product.id_product_attribute|intval}{/if}{if isset($static_token)}&amp;token={$static_token}{/if}{/capture}
