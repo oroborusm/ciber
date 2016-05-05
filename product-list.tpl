@@ -63,7 +63,7 @@
 							<span>{l s='Quick view'}</span>
 						</a>
 						{/if}
-						{if (!$PS_CATALOG_MODE && ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
+						<!-- {if (!$PS_CATALOG_MODE && ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
 							<div class="content_pricee" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 								{if isset($product.show_price) && $product.show_price && !isset($restricted_country_mode)}
 									<span itemprop="price" class="price product-price">
@@ -96,7 +96,7 @@
 									{hook h="displayProductPriceBlock" product=$product type="unit_price"}
 								{/if}
 							</div>
-						{/if}
+						{/if} -->
 						{if isset($product.new) && $product.new == 1}
 							<a class="new-box" href="{$product.link|escape:'html':'UTF-8'}">
 								<span class="new-label">{l s='New'}</span>
@@ -124,7 +124,7 @@
 						{hook h='displayProductListReviews' product=$product}
 						</div>
 					{/if}
-					<p class="product-desc" itemprop="description">
+					<p class="product-desc font__zero" itemprop="description">
 						{$product.description_short|strip_tags:'UTF-8'|truncate:360:'...'}
 					</p>
 					{if (!$PS_CATALOG_MODE AND ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
@@ -163,9 +163,9 @@
 								</span>
 							{/if}
 						{/if}
-						<a class="button lnk_view btn btn-default" href="{$product.link|escape:'html':'UTF-8'}" title="{l s='View'}">
+						<!-- <a class="button lnk_view btn btn-default" href="{$product.link|escape:'html':'UTF-8'}" title="{l s='View'}">
 							<span>{if (isset($product.customization_required) && $product.customization_required)}{l s='Customize'}{else}{l s='More'}{/if}</span>
-						</a>
+						</a> -->
 					</div>
 					{if isset($product.color_list)}
 						<div class="color-list-container">{$product.color_list}</div>

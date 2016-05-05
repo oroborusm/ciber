@@ -6,16 +6,21 @@ body {
 .display__none {
   display: none;
 }
+.font__zero {
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
+}
 .gradient__to__bottom {
-  background: -webkit-linear-gradient(#dadada 1%, transparent 10%);
-  background: -moz-linear-gradient(#dadada 1%, transparent 10%);
-  background: -o-linear-gradient(#dadada 1%, transparent 10%);
-  background: -ms-linear-gradient(#dadada 1%, transparent 10%);
-  background: linear-gradient(#dadada 1%, transparent 10%);
+  background: -webkit-linear-gradient(#eaeaea 10%, transparent 60%);
+  background: -moz-linear-gradient(#eaeaea 10%, transparent 60%);
+  background: -o-linear-gradient(#eaeaea 10%, transparent 60%);
+  background: -ms-linear-gradient(#eaeaea 10%, transparent 60%);
+  background: linear-gradient(#eaeaea 10%, transparent 60%);
 }
 .header_logo {
   margin: 0 auto;
-  width: 300px;
+  width: 280px;
 }
 .visible {
   display: block !important;
