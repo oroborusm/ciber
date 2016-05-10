@@ -24,14 +24,20 @@
 *}
 <!-- MODULE Block cart -->
 {if isset($blockcart_top) && $blockcart_top}
-<div class="col-xs-2 clearfix{if $PS_CATALOG_MODE} header_user_catalog{/if}">
+<div class="clearfix{if $PS_CATALOG_MODE} header_user_catalog{/if} right">
 {/if}
 	<div class="shopping_cart">
-		<a href="{$link->getPageLink($order_process, true)|escape:'html':'UTF-8'}" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
+		<a href="{$link->getPageLink($order_process, true)|escape:'html':'UTF-8'}" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow" class="cart__button">
+			<svg id="FRONT" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 37.01">
+				<g>
+					<path d="M1342.45,157.09h-2.53l-7.58,0c-0.68,0-.72,0-0.74.73,0,1.29-.06,2.58-0.08,3.87a5.85,5.85,0,0,0,0,.67,0.38,0.38,0,0,0,.43.4h0.45l12,0,6.68,0c0.26,0,.34.06,0.34,0.32s0,0.73-.06,1.1a0.26,0.26,0,0,1-.27.24l-0.63,0-14.93-.07-5.32,0c-0.37,0-.43-0.06-0.45-0.43,0-.17,0-0.34,0-0.51,0-1.58,0-3.16.08-4.73a10.75,10.75,0,0,0-.39-3.68c-1.43-4.54-2.81-9.08-4.22-13.63-0.36-1.16-.74-2.32-1.1-3.48a1.42,1.42,0,0,0-.54-0.72l-1.91-1.45-0.38-.31a0.26,0.26,0,0,1,0-.4c0.17-.22.33-0.44,0.51-0.65s0.34-.33.67-0.08c0.92,0.67,1.83,1.36,2.76,2a1.23,1.23,0,0,1,.48.69c0.46,1.55.94,3.1,1.41,4.64,0.07,0.22.16,0.43,0.24,0.64a0.48,0.48,0,0,0,.5.37l0.35,0c3.83,0.21,7.66.41,11.5,0.64q4.1,0.24,8.2.53c2.44,0.17,4.87.37,7.31,0.55q0.66,0.05,1.31.14a0.28,0.28,0,0,1,.29.38,3.35,3.35,0,0,1-.09.48q-0.5,2-1,4-0.91,3.58-1.81,7.16a0.48,0.48,0,0,1-.48.41c-0.39,0-.78.06-1.18,0.06h-9.77Z" transform="translate(-1321.19 -134.2)" style="fill: #ff7300"/>
+					<path d="M1329.6,168.08a3.11,3.11,0,0,0,3.16,3.14,3,3,0,0,0,2.88-3.14,3.12,3.12,0,0,0-3.14-3A3,3,0,0,0,1329.6,168.08Z" transform="translate(-1321.19 -134.2)" style="fill: #ff7300"/>
+					<path d="M1351.54,168a3.13,3.13,0,0,0-2.54-3.11,2.86,2.86,0,0,0-2.93,1.4,2.68,2.68,0,0,0,.17,3.48A2.93,2.93,0,0,0,1351.54,168Z" transform="translate(-1321.19 -134.2)" style="fill: #ff7300"/>
+				</g>
+			</svg>
+
 			<b>{l s='Cart' mod='blockcart'}</b>
 			<span class="ajax_cart_quantity{if $cart_qties == 0} unvisible{/if}">{$cart_qties}</span>
-			<span class="ajax_cart_product_txt{if $cart_qties != 1} unvisible{/if}">{l s='Product' mod='blockcart'}</span>
-			<span class="ajax_cart_product_txt_s{if $cart_qties < 2} unvisible{/if}">{l s='Products' mod='blockcart'}</span>
 			<span class="ajax_cart_total{if $cart_qties == 0} unvisible{/if}">
 				{if $cart_qties > 0}
 					{if $priceDisplay == 1}
@@ -43,7 +49,7 @@
 					{/if}
 				{/if}
 			</span>
-			<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">{l s='(empty)' mod='blockcart'}</span>
+			<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">0</span>
 			{if $ajax_allowed && isset($blockcart_top) && !$blockcart_top}
 				<span class="block_cart_expand{if !isset($colapseExpandStatus) || (isset($colapseExpandStatus) && $colapseExpandStatus eq 'expanded')} unvisible{/if}">&nbsp;</span>
 				<span class="block_cart_collapse{if isset($colapseExpandStatus) && $colapseExpandStatus eq 'collapsed'} unvisible{/if}">&nbsp;</span>
@@ -204,137 +210,7 @@
 {if isset($blockcart_top) && $blockcart_top}
 </div>
 {/if}
-{counter name=active_overlay assign=active_overlay}
-{if !$PS_CATALOG_MODE && $active_overlay == 1}
-	<div id="layer_cart">
-		<div class="clearfix">
-			<div class="layer_cart_product col-xs-12 col-md-6">
-				<span class="cross" title="{l s='Close window' mod='blockcart'}"></span>
-				<span class="title">
-					<i class="icon-check"></i>{l s='Product successfully added to your shopping cart' mod='blockcart'}
-				</span>
-				<div class="product-image-container layer_cart_img">
-				</div>
-				<div class="layer_cart_product_info">
-					<span id="layer_cart_product_title" class="product-name"></span>
-					<span id="layer_cart_product_attributes"></span>
-					<div>
-						<strong class="dark">{l s='Quantity' mod='blockcart'}</strong>
-						<span id="layer_cart_product_quantity"></span>
-					</div>
-					<div>
-						<strong class="dark">{l s='Total' mod='blockcart'}</strong>
-						<span id="layer_cart_product_price"></span>
-					</div>
-				</div>
-			</div>
-			<div class="layer_cart_cart col-xs-12 col-md-6">
-				<span class="title">
-					<!-- Plural Case [both cases are needed because page may be updated in Javascript] -->
-					<span class="ajax_cart_product_txt_s {if $cart_qties < 2} unvisible{/if}">
-						{l s='There are [1]%d[/1] items in your cart.' mod='blockcart' sprintf=[$cart_qties] tags=['<span class="ajax_cart_quantity">']}
-					</span>
-					<!-- Singular Case [both cases are needed because page may be updated in Javascript] -->
-					<span class="ajax_cart_product_txt {if $cart_qties > 1} unvisible{/if}">
-						{l s='There is 1 item in your cart.' mod='blockcart'}
-					</span>
-				</span>
-				<div class="layer_cart_row">
-					<strong class="dark">
-						{l s='Total products' mod='blockcart'}
-						{if $use_taxes && $display_tax_label && $show_tax}
-							{if $priceDisplay == 1}
-								{l s='(tax excl.)' mod='blockcart'}
-							{else}
-								{l s='(tax incl.)' mod='blockcart'}
-							{/if}
-						{/if}
-					</strong>
-					<span class="ajax_block_products_total">
-						{if $cart_qties > 0}
-							{convertPrice price=$cart->getOrderTotal(false, Cart::ONLY_PRODUCTS)}
-						{/if}
-					</span>
-				</div>
 
-				{if $show_wrapping}
-					<div class="layer_cart_row">
-						<strong class="dark">
-							{l s='Wrapping' mod='blockcart'}
-							{if $use_taxes && $display_tax_label && $show_tax}
-								{if $priceDisplay == 1}
-									{l s='(tax excl.)' mod='blockcart'}
-								{else}
-									{l s='(tax incl.)' mod='blockcart'}
-								{/if}
-							{/if}
-						</strong>
-						<span class="price cart_block_wrapping_cost">
-							{if $priceDisplay == 1}
-								{convertPrice price=$cart->getOrderTotal(false, Cart::ONLY_WRAPPING)}
-							{else}
-								{convertPrice price=$cart->getOrderTotal(true, Cart::ONLY_WRAPPING)}
-							{/if}
-						</span>
-					</div>
-				{/if}
-				<div class="layer_cart_row">
-					<strong class="dark{if $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery)} unvisible{/if}">
-						{l s='Total shipping' mod='blockcart'}&nbsp;{if $use_taxes && $display_tax_label && $show_tax}{if $priceDisplay == 1}{l s='(tax excl.)' mod='blockcart'}{else}{l s='(tax incl.)' mod='blockcart'}{/if}{/if}
-					</strong>
-					<span class="ajax_cart_shipping_cost{if $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery)} unvisible{/if}">
-						{if $shipping_cost_float == 0}
-							 {if (!isset($cart->id_address_delivery) || !$cart->id_address_delivery)}{l s='To be determined' mod='blockcart'}{else}{l s='Free shipping!' mod='blockcart'}{/if}
-						{else}
-							{$shipping_cost}
-						{/if}
-					</span>
-				</div>
-				{if $show_tax && isset($tax_cost)}
-					<div class="layer_cart_row">
-						<strong class="dark">{l s='Tax' mod='blockcart'}</strong>
-						<span class="price cart_block_tax_cost ajax_cart_tax_cost">{$tax_cost}</span>
-					</div>
-				{/if}
-				<div class="layer_cart_row">
-					<strong class="dark">
-						{l s='Total' mod='blockcart'}
-						{if $use_taxes && $display_tax_label && $show_tax}
-							{if $priceDisplay == 1}
-								{l s='(tax excl.)' mod='blockcart'}
-							{else}
-								{l s='(tax incl.)' mod='blockcart'}
-							{/if}
-						{/if}
-					</strong>
-					<span class="ajax_block_cart_total">
-						{if $cart_qties > 0}
-							{if $priceDisplay == 1}
-								{convertPrice price=$cart->getOrderTotal(false)}
-							{else}
-								{convertPrice price=$cart->getOrderTotal(true)}
-							{/if}
-						{/if}
-					</span>
-				</div>
-				<div class="button-container">
-					<span class="continue btn btn-default button exclusive-medium" title="{l s='Continue shopping' mod='blockcart'}">
-						<span>
-							<i class="icon-chevron-left left"></i>{l s='Continue shopping' mod='blockcart'}
-						</span>
-					</span>
-					<a class="btn btn-default button button-medium"	href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Proceed to checkout' mod='blockcart'}" rel="nofollow">
-						<span>
-							{l s='Proceed to checkout' mod='blockcart'}<i class="icon-chevron-right right"></i>
-						</span>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="crossseling"></div>
-	</div> <!-- #layer_cart -->
-	<div class="layer_cart_overlay"></div>
-{/if}
 {strip}
 {addJsDef CUSTOMIZE_TEXTFIELD=$CUSTOMIZE_TEXTFIELD}
 {addJsDef img_dir=$img_dir|escape:'quotes':'UTF-8'}

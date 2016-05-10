@@ -65,7 +65,143 @@
 				<p>{l s='You cannot place a new order from your country.'}{if isset($geolocation_country) && $geolocation_country} <span class="bold">{$geolocation_country|escape:'html':'UTF-8'}</span>{/if}</p>
 			</div>
 		{/if}
+
 		<div id="page">
+
+			{counter name=active_overlay assign=active_overlay}
+			{if !$PS_CATALOG_MODE && $active_overlay == 1}
+				<div id="layer_cart" calss="huea">
+					<div class="clearfix">
+						<div class="layer_cart_product col-xs-12 col-md-6">
+							<span class="cross" title="{l s='Close window' mod='blockcart'}"></span>
+							<span class="title">
+								<i class="icon-check"></i>{l s='Product successfully added to your shopping cart' mod='blockcart'}
+							</span>
+							<div class="product-image-container layer_cart_img">
+							</div>
+							<div class="layer_cart_product_info">
+								<span id="layer_cart_product_title" class="product-name"></span>
+								<span id="layer_cart_product_attributes"></span>
+								<div>
+									<strong class="dark">{l s='Quantity' mod='blockcart'}</strong>
+									<span id="layer_cart_product_quantity"></span>
+								</div>
+								<div>
+									<strong class="dark">{l s='Total' mod='blockcart'}</strong>
+									<span id="layer_cart_product_price"></span>
+								</div>
+							</div>
+						</div>
+						<div class="layer_cart_cart col-xs-12 col-md-6">
+							<span class="title">
+								<!-- Plural Case [both cases are needed because page may be updated in Javascript] -->
+								<span class="ajax_cart_product_txt_s {if $cart_qties < 2} unvisible{/if}">
+									{l s='There are [1]%d[/1] items in your cart.' mod='blockcart' sprintf=[$cart_qties] tags=['<span class="ajax_cart_quantity">']}
+								</span>
+								<!-- Singular Case [both cases are needed because page may be updated in Javascript] -->
+								<span class="ajax_cart_product_txt {if $cart_qties > 1} unvisible{/if}">
+									{l s='There is 1 item in your cart.' mod='blockcart'}
+								</span>
+							</span>
+							<div class="layer_cart_row">
+								<strong class="dark">
+									{l s='Total products' mod='blockcart'}
+									{if $use_taxes && $display_tax_label && $show_tax}
+										{if $priceDisplay == 1}
+											{l s='(tax excl.)' mod='blockcart'}
+										{else}
+											{l s='(tax incl.)' mod='blockcart'}
+										{/if}
+									{/if}
+								</strong>
+								<span class="ajax_block_products_total">
+									{if $cart_qties > 0}
+										{convertPrice price=$cart->getOrderTotal(false, Cart::ONLY_PRODUCTS)}
+									{/if}
+								</span>
+							</div>
+
+							{if $show_wrapping}
+								<div class="layer_cart_row">
+									<strong class="dark">
+										{l s='Wrapping' mod='blockcart'}
+										{if $use_taxes && $display_tax_label && $show_tax}
+											{if $priceDisplay == 1}
+												{l s='(tax excl.)' mod='blockcart'}
+											{else}
+												{l s='(tax incl.)' mod='blockcart'}
+											{/if}
+										{/if}
+									</strong>
+									<span class="price cart_block_wrapping_cost">
+										{if $priceDisplay == 1}
+											{convertPrice price=$cart->getOrderTotal(false, Cart::ONLY_WRAPPING)}
+										{else}
+											{convertPrice price=$cart->getOrderTotal(true, Cart::ONLY_WRAPPING)}
+										{/if}
+									</span>
+								</div>
+							{/if}
+							<div class="layer_cart_row">
+								<strong class="dark{if $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery)} unvisible{/if}">
+									{l s='Total shipping' mod='blockcart'}&nbsp;{if $use_taxes && $display_tax_label && $show_tax}{if $priceDisplay == 1}{l s='(tax excl.)' mod='blockcart'}{else}{l s='(tax incl.)' mod='blockcart'}{/if}{/if}
+								</strong>
+								<span class="ajax_cart_shipping_cost{if $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery)} unvisible{/if}">
+									{if $shipping_cost_float == 0}
+										 {if (!isset($cart->id_address_delivery) || !$cart->id_address_delivery)}{l s='To be determined' mod='blockcart'}{else}{l s='Free shipping!' mod='blockcart'}{/if}
+									{else}
+										{$shipping_cost}
+									{/if}
+								</span>
+							</div>
+							{if $show_tax && isset($tax_cost)}
+								<div class="layer_cart_row">
+									<strong class="dark">{l s='Tax' mod='blockcart'}</strong>
+									<span class="price cart_block_tax_cost ajax_cart_tax_cost">{$tax_cost}</span>
+								</div>
+							{/if}
+							<div class="layer_cart_row">
+								<strong class="dark">
+									{l s='Total' mod='blockcart'}
+									{if $use_taxes && $display_tax_label && $show_tax}
+										{if $priceDisplay == 1}
+											{l s='(tax excl.)' mod='blockcart'}
+										{else}
+											{l s='(tax incl.)' mod='blockcart'}
+										{/if}
+									{/if}
+								</strong>
+								<span class="ajax_block_cart_total">
+									{if $cart_qties > 0}
+										{if $priceDisplay == 1}
+											{convertPrice price=$cart->getOrderTotal(false)}
+										{else}
+											{convertPrice price=$cart->getOrderTotal(true)}
+										{/if}
+									{/if}
+								</span>
+							</div>
+							<div class="button-container">
+								<span class="continue btn btn-default button exclusive-medium" title="{l s='Continue shopping' mod='blockcart'}">
+									<span>
+										<i class="icon-chevron-left left"></i>{l s='Continue shopping' mod='blockcart'}
+									</span>
+								</span>
+								<a class="btn btn-default button button-medium"	href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Proceed to checkout' mod='blockcart'}" rel="nofollow">
+									<span>
+										{l s='Proceed to checkout' mod='blockcart'}<i class="icon-chevron-right right"></i>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="crossseling"></div>
+				</div> <!-- #layer_cart -->
+				<div class="layer_cart_overlay"></div>
+			{/if}
+
+
+
 			<div class="header-container">
 				<header id="header">
 					{capture name='displayBanner'}{hook h='displayBanner'}{/capture}
@@ -91,31 +227,40 @@
 					<div class="gradient__to__bottom">
 						<div class="container">
 							<div class="row">
-								<div class="col-xs-2">
+								<div class="col-xs-3 logo__ciberday">
+									<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502.73 103.15">
+										<g>
+											<path d="M233.9,100.31v57.25a0.74,0.74,0,0,0,.74.74h9a0.74,0.74,0,0,0,.74-0.74v-2.62a17.68,17.68,0,0,0,11.29,3.85c12.77,0,21-8.51,21-21.68s-8.25-21.67-21-21.67a17.85,17.85,0,0,0-11.29,3.76V88.14a0.74,0.74,0,0,0-.24-0.55,0.75,0.75,0,0,0-.57-0.18h-8.83a0.84,0.84,0,0,0-.82.73v12.17Zm21.35,25.27c6.55,0,11.12,4.74,11.12,11.53s-4.57,11.53-11.12,11.53-11-4.75-11-11.53S248.75,125.59,255.25,125.59Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M394.46,88.14a0.84,0.84,0,0,0-.82-0.73h-8.83a0.74,0.74,0,0,0-.82.73v31.07a17.85,17.85,0,0,0-11.29-3.76c-12.77,0-21,8.51-21,21.67s8.25,21.68,21,21.68A17.68,17.68,0,0,0,384,154.94v2.62a0.74,0.74,0,0,0,.74.74h9a0.74,0.74,0,0,0,.74-0.74V88.14Zm-10.3,49c0,6.79-4.54,11.53-11,11.53S362,143.91,362,137.12s4.57-11.53,11.12-11.53S384.16,130.33,384.16,137.12Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M302.23,115.44a21.45,21.45,0,0,0,.25,42.89c9.36,0,17.57-5.13,20.43-12.78a0.73,0.73,0,0,0-.68-1h-10.6a0.73,0.73,0,0,0-.61.33c-1.51,2.29-4.54,3.55-8.53,3.55A10.83,10.83,0,0,1,292,140.69h30.56a0.73,0.73,0,0,0,.72-0.61,19.73,19.73,0,0,0,.25-3.2A21.14,21.14,0,0,0,302.23,115.44Zm0,9.71a10.71,10.71,0,0,1,9.72,6.15H292.52A10.71,10.71,0,0,1,302.23,125.16Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M348.38,114.82c-4.34,0-7.49,1.11-10,3.56v-2.31a0.75,0.75,0,0,0-.75-0.75h-9.13a0.75,0.75,0,0,0-.75.75v41.49a0.75,0.75,0,0,0,.75.75h9.13a0.75,0.75,0,0,0,.75-0.75v-22.9c0-5.71,3.67-9.54,9.12-9.54h0.83a0.75,0.75,0,0,0,.75-0.75v-8.8A0.75,0.75,0,0,0,348.38,114.82Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M486.82,115.65a0.74,0.74,0,0,0-.62-0.34h-9.32a0.74,0.74,0,0,0-.68.45L466.74,138l-9.46-22.21a0.74,0.74,0,0,0-.68-0.45h-9.33a0.75,0.75,0,0,0-.62.34,0.73,0.73,0,0,0-.05.7l14.9,33.56V169.6a0.74,0.74,0,0,0,.74.74h0.08l9,0.06a0.74,0.74,0,0,0,.66-0.73V149.91l14.9-33.56A0.73,0.73,0,0,0,486.82,115.65Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M439.71,142.07" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M229.5,115.65a0.75,0.75,0,0,0-.62-0.33h-9.33a0.74,0.74,0,0,0-.68.45L209.42,138,200,115.77a0.74,0.74,0,0,0-.68-0.45h-9.32a0.73,0.73,0,0,0-.67,1l14.9,33.56v19.73a0.73,0.73,0,0,0,.74.74H214a0.74,0.74,0,0,0,.66-0.73V149.91l14.9-33.56A0.74,0.74,0,0,0,229.5,115.65Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M188.3,144.86l-8.05-4.26a0.56,0.56,0,0,0-.77.28l-0.11.28c-0.78,1.94-2.84,7.11-8.92,7.11-4.32,0-7.63-2.83-8.86-7.58a14.92,14.92,0,0,1-.53-4.18c0-1.38,0-5.56,2.79-8.8a7.8,7.8,0,0,1,6.36-2.88,8.15,8.15,0,0,1,6.24,2.52,9.08,9.08,0,0,1,2.23,3.79,0.55,0.55,0,0,0,.31.35,0.56,0.56,0,0,0,.46,0l8.45-3.95a0.56,0.56,0,0,0,.27-0.72,19.14,19.14,0,0,0-9.93-10.08,20.43,20.43,0,0,0-23.7,6.41,22,22,0,0,0-4.38,13.6c0,3.35.84,14.67,11.62,19.61a21.45,21.45,0,0,0,8.43,1.86A19.56,19.56,0,0,0,186,150.5a20.3,20.3,0,0,0,2.6-4.95A0.56,0.56,0,0,0,188.3,144.86Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<path d="M441.51,115.29h-9.3a0.73,0.73,0,0,0-.73.73v2.53a18,18,0,0,0-11.14-3.76c-12.51,0-21.59,9.25-21.59,22s9.08,22,21.59,22A18,18,0,0,0,431.47,155v2.53a0.73,0.73,0,0,0,.73.73h9.3a0.74,0.74,0,0,0,.73-0.73V116A0.74,0.74,0,0,0,441.51,115.29Zm-20.85,33.23a11.73,11.73,0,0,1,0-23.45c6.25,0,11.14,5.15,11.14,11.73S426.91,148.51,420.66,148.51Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
+											<g>
+												<path d="M499.18,144.07a3.66,3.66,0,0,0-1.34-1.14,3.91,3.91,0,0,0-1.86-.46,5,5,0,0,0-3.82,1.47,6.11,6.11,0,0,0,0,7.69,5,5,0,0,0,3.82,1.47,3.47,3.47,0,0,0,1.86-.47,5.75,5.75,0,0,0,1.34-1.12l4.28,4.49a8.29,8.29,0,0,1-3.57,2.18,13.46,13.46,0,0,1-3.91.62,13.26,13.26,0,0,1-4.55-.78,11,11,0,0,1-3.71-2.23,10.37,10.37,0,0,1-2.48-3.48,11.78,11.78,0,0,1,0-9.07,10.42,10.42,0,0,1,2.48-3.48,10.91,10.91,0,0,1,3.71-2.22,13.17,13.17,0,0,1,4.55-.78,13.41,13.41,0,0,1,3.91.63,8.25,8.25,0,0,1,3.57,2.18Z" transform="translate(-67.72 -67.24)" style="fill: #e0274b"/>
+												<path d="M511.4,125.62v14.52h0.09a3.93,3.93,0,0,1,.74-1.21,5.78,5.78,0,0,1,1.25-1.08,6.8,6.8,0,0,1,1.73-.78,7.36,7.36,0,0,1,2.16-.3,9,9,0,0,1,4,.75,5.79,5.79,0,0,1,2.35,2.1,8.52,8.52,0,0,1,1.14,3.15,23.79,23.79,0,0,1,.3,3.93v11.57h-6.48V148c0-.61,0-1.23-0.07-1.88a6,6,0,0,0-.39-1.79,2.8,2.8,0,0,0-2.92-1.86,4,4,0,0,0-2,.46,3.11,3.11,0,0,0-1.19,1.21,4.91,4.91,0,0,0-.54,1.71,14.13,14.13,0,0,0-.13,2v10.45h-6.48V125.62h6.48Z" transform="translate(-67.72 -67.24)" style="fill: #e0274b"/>
+												<path d="M528.42,130.68a3.76,3.76,0,1,1,1.1,2.66A3.63,3.63,0,0,1,528.42,130.68Zm0.52,6h6.48v21.65h-6.48V136.63Z" transform="translate(-67.72 -67.24)" style="fill: #e0274b"/>
+												<path d="M539.31,125.62h6.48v32.66h-6.48V125.62Z" transform="translate(-67.72 -67.24)" style="fill: #e0274b"/>
+												<path d="M569.46,154.65a10.44,10.44,0,0,1-3.93,3.07,11.82,11.82,0,0,1-4.93,1.08A13.27,13.27,0,0,1,556,158a11,11,0,0,1-3.71-2.23,10.36,10.36,0,0,1-2.48-3.48,11.8,11.8,0,0,1,0-9.07,10.42,10.42,0,0,1,2.48-3.48,10.91,10.91,0,0,1,3.71-2.22,13.18,13.18,0,0,1,4.56-.78,10.34,10.34,0,0,1,4.08.78,8.45,8.45,0,0,1,3.11,2.22,10.15,10.15,0,0,1,2,3.48,14,14,0,0,1,.69,4.53v2h-15a5.11,5.11,0,0,0,1.69,3,4.75,4.75,0,0,0,3.2,1.1,4.86,4.86,0,0,0,2.7-.71,7.22,7.22,0,0,0,1.92-1.84ZM564,145.41a3.75,3.75,0,0,0-1.08-2.81,3.86,3.86,0,0,0-2.9-1.17,4.85,4.85,0,0,0-1.9.35,4.67,4.67,0,0,0-1.4.89,3.84,3.84,0,0,0-.91,1.25,4,4,0,0,0-.37,1.49H564Z" transform="translate(-67.72 -67.24)" style="fill: #e0274b"/>
+											</g>
+											<g>
+												<polygon points="70.38 103.15 70.38 103.15 0 103.15 0 103.15 1.75 20.15 1.75 20.15 68.62 20.15 68.62 20.15 70.38 103.15" style="fill: #0068ff"/>
+												<polygon points="70.38 103.15 0 103.15 0.13 97.09 70.25 97.09 70.38 103.15" style="fill: #e0274b"/>
+												<path d="M102.83,125.84a18.72,18.72,0,0,1-18.7-18.7v-3.29a2.2,2.2,0,1,1,4.4,0v3.29a14.3,14.3,0,0,0,28.59,0v-3.29a2.2,2.2,0,1,1,4.4,0v3.29A18.72,18.72,0,0,1,102.83,125.84Z" transform="translate(-67.72 -67.24)" style="fill: #fff"/>
+												<path d="M91.52,103.51A1.47,1.47,0,0,1,90.05,102a3.65,3.65,0,1,0-7.29,0,1.47,1.47,0,1,1-2.93,0A6.58,6.58,0,0,1,93,102,1.47,1.47,0,0,1,91.52,103.51Z" transform="translate(-67.72 -67.24)" style="fill: #2f5cad"/>
+												<path d="M124.44,103.51A1.47,1.47,0,0,1,123,102a3.65,3.65,0,1,0-7.29,0,1.47,1.47,0,1,1-2.93,0,6.58,6.58,0,0,1,13.16,0A1.47,1.47,0,0,1,124.44,103.51Z" transform="translate(-67.72 -67.24)" style="fill: #2f5cad"/>
+												<path d="M122.55,87.39h-4.11v-0.5a15.54,15.54,0,1,0-31.09,0v0.5H83.25v-0.5a19.65,19.65,0,1,1,39.3,0v0.5Z" transform="translate(-67.72 -67.24)" style="fill: #2f5cad"/>
+											</g>
+										</g>
+									</svg>
 
 								</div>
-								<div class="col-xs-8">
+								<div class="col-xs-6">
 									<div id="header_logo" class="header_logo">
 										<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
-											<!-- <img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if isset($logo_image_width) && $logo_image_width} width="{$logo_image_width}"{/if}{if isset($logo_image_height) && $logo_image_height} height="{$logo_image_height}"{/if}/> -->
-											<!-- <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.95 96.54">
-												<g>
-													<g>
-														<path d="M543.3,443.07V453H526.1v-44.6h16.82l8.92,12.74,8.92-12.74h16.76V453H560.38v-9.94l1.21-10.32-6.69,10.32h-6.12l-6.69-10.32Z" transform="translate(-526.1 -356.47)" style="fill: #5b5b5f"/>
-														<path d="M613.7,447.85H599.55L597.64,453h-18v-1.72l17.2-43.39H616.5l17.2,43.39V453h-18ZM604,436.32h5.29l-2.68-11.21Z" transform="translate(-526.1 -356.47)" style="fill: #5b5b5f"/>
-														<path d="M735,447.85H720.9L719,453H701v-1.72l17.2-43.39h19.69L755,451.29V453H737Zm-9.68-11.53h5.29L728,425.1Z" transform="translate(-526.1 -356.47)" style="fill: #5b5b5f"/>
-														<rect x="156.08" y="51.94" width="17.46" height="44.6" style="fill: #5b5b5f"/>
-														<path d="M661.92,408.41v8.16l1.08,9.37-5.67-8.12-14.54,8.39a4.47,4.47,0,0,1-4.47,0l-2.08-1.2v28h17.39V445.3l-1.34-9.88L664.66,453h14.53v-44.6H661.92Z" transform="translate(-526.1 -356.47)" style="fill: #5b5b5f"/>
-													</g>
-													<g>
-														<path d="M565.56,402.28V371.64h-9.49v-14h36.38v14H583v30.65H565.56Z" transform="translate(-526.1 -356.47)" style="fill: #434142"/>
-														<path d="M707.43,357.68V388h16.18v14.27H690v-44.6h17.39Z" transform="translate(-526.1 -356.47)" style="fill: #434142"/>
-														<path d="M621.32,396.76a4.47,4.47,0,0,1,2.24-3.87l14.76-8.52a4.42,4.42,0,0,1,1.5-.5,26.83,26.83,0,0,0,.34-4c-0.12-31.16-48.17-31.22-48.3,0,0.07,17.85,15.94,25.33,29.46,22.65v-5.76Zm-12.26-17c0.06-10.39,13.64-10.39,13.7,0S609.13,390.12,609.06,379.8Z" transform="translate(-526.1 -356.47)" style="fill: #434142"/>
-														<path d="M641,379.86a27.32,27.32,0,0,0,.33,4,4.42,4.42,0,0,1,1.49.5l14.76,8.52a4.47,4.47,0,0,1,2.24,3.87v5.79c13.53,2.6,29.41-5,29.48-22.68C689.17,348.7,641.12,348.64,641,379.86Zm17.2-.06c0.06-10.39,13.64-10.39,13.7,0S658.26,390.12,658.2,379.8Z" transform="translate(-526.1 -356.47)" style="fill: #434142"/>
-													</g>
-													<path d="M654.53,394.79l-12.14-7a3.68,3.68,0,0,0-3.68,0l-12.14,7a3.68,3.68,0,0,0-1.84,3.18v14a3.68,3.68,0,0,0,1.84,3.18l9.65,5.57V409.2a8.31,8.31,0,0,1,0-15.53v7.77h8.65V393.7a8.28,8.28,0,0,1,0,15.49v11.56l9.65-5.57a3.68,3.68,0,0,0,1.84-3.18V398A3.68,3.68,0,0,0,654.53,394.79Z" transform="translate(-526.1 -356.47)" style="fill: #E66110"/>
-												</g>
-											</svg> -->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 206 119.73">
 											  <defs>
 											    <linearGradient id="linear-gradient" x1="626.33" y1="189.32" x2="626.33" y2="175.75" gradientUnits="userSpaceOnUse">
@@ -213,7 +358,14 @@
 										</a>
 									</div>
 								</div>
-								{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
+								<div class="col-xs-3">
+									<div class="row inline__info">
+										<div class="user__info clearfix">
+											{include file="$tpl_dir./modules/blockuserinfo/nav.tpl"}
+										</div>
+										{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

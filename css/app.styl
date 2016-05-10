@@ -1,24 +1,203 @@
 @import 'nib'
 
-body
-	box-sizing: border-box
 
+
+*
+	box-sizing: border-box
+	font-smoothing: antialiased
+.carrito__list
+	svg
+		width: 35px
+.cart__of
+	font-family: 'Oswald', sans-serif
+	font-size: 16px
+	margin: 0
+	text-transform: capitalize
 .display__none
 	display: none
+.font__light
+	font-weight: 100
 .font__zero
 	font-size: 0
 	line-height: 0
 	margin: 0
 .gradient__to__bottom
-	background: linear-gradient(#EAEAEA 10%, transparent 60%)
+	background: linear-gradient(#EAEAEA 1%, transparent 99%)
 .header_logo
 	margin: 0 auto
-	width: 280px
-.visible
-	display: block !important
+	width: 250px
+.inline__info
+	padding-top: 55px
+	text-align: right
+	.user__info
+	.right
+		display: inline-block
+.left-block
+	position: relative
+	.discount__box
+		background: #ff6700
+		border-radius: 50%
+		height: 65px
+		left: 0
+		position: absolute
+		top: 0
+		width: 65px
+		z-index: 1
+		.price-percent-reduction
+			background none
+			border 0
+			color white
+			display block
+			font-family: 'Oswald', sans-serif
+			font-size: 24px
+			line-height: 65px
+			padding 0
+.logged
+	position: relative
+.logout
+	display: block
+	padding: 10px 0
+	position: absolute
+	text-transform: uppercase
+	top: 10px
+	right: 0
+	//pointer-events: none
+.logo__ciberday
+	padding-top: 55px
+	svg
+		max-width: 200px
+.price__box
+	position: relative
+.right
+	text-align: right
+	vertical-align: middle
+.right-block
+	padding: 0 10px
+	text-align: left
+	h5
+		margin: 0
+		padding: 0 !important
+		a
+			font-size: 16px
+			font-family: 'Oswald', sans-serif
+			font-weight: 100
+	.button-containerr
+		background: #f8b302
+		border-radius: 50%
+		height: 60px
+		position: absolute
+		right: 0
+		top: 22px
+		width: 60px
+		a
+			border-color: transparent
+			display: block
+			height: 100%
+			padding: 12px
+			width: 100%
+			span
+				background: transparent
+				border: none
+				font-size: 0
+	.content_price
+		span
+			display: block
+		.old-price
+			color: #666
+			font-size: 13px
+			font-family: 'Oswald', sans-serif
+			font-weight: 400
+		.price-percent-reduction
+			background: white
+			border: 0
+			color: red
+			display: none
+			font-size: 13px
+			font-family: 'Oswald', sans-serif
+			font-weight: 400
+		.product-price
+			color: #ff6700
+			font-size: 24px
+			font-family: 'Oswald', sans-serif
+			font-weight: 400
 .shopping_cart
-	width: 100%
+	text-align: right
+	height: 55px
+	padding-top: 0 !important
+	width: 55px
 	a
 		b
 			display: none
 			font-size: 0
+	.cart__button
+		background: linear-gradient(#EAEAEA 10%, transparent 60%)
+		border-radius: 10px
+		box-shadow: 0 0 10px rgba(black, .3)
+		height: 55px
+		position: relative
+		width: 100%
+		.ajax_cart_no_product
+		.ajax_cart_quantity
+			background: #FF6700
+			border-radius: 50%
+			color: white
+			height: 33px
+			line-height: 33px
+			position: absolute
+			right: -16px
+			text-align: center
+			top: -16px
+			width: 33px
+	.cart_block
+		top: 55px !important
+ul.product_list
+	li
+		border-right: 1px solid #c9c9c9
+	.availability
+		span
+			color: #666
+			margin: 0
+			padding: 0
+		.label-success
+			background: transparent
+			border: 0
+ul.product_list.grid > li
+	.product-container
+		.product-image-container
+			border: 0
+.user__info
+	height: 55px
+	padding: 5px 10px
+	vertical-align: middle
+	width: calc(100% - 60px)
+	.header_user_info
+		border: none
+		float: none
+		.logged
+			&:hover
+				.logout
+					opacity: 1
+					//pointer-events: initial
+					top: 40px
+					visibility: visible
+		a
+			color: #666
+			font-family: 'Oswald', sans-serif
+			font-size: 16px
+			padding: 0
+			span
+				color: #666
+				font-family: 'Oswald', sans-serif
+				text-transform: uppercase
+			&:hover
+				background: transparent
+		.login
+			font-family: 'Oswald', sans-serif
+			font-weight: 100
+			text-transform: full-width
+		.logout
+			opacity: 0
+			transition: .25s
+			visibility: hidden
+.visible
+	display: block !important
