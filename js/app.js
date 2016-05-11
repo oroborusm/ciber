@@ -25,4 +25,7 @@ $(function(){
 	$('.block').on('click', function(e){
 		e.stopPropagation();
 	});
+	$('.alert , .alert-danger').on('click', function(){
+		$('.alert , .alert-danger').css({'display' : 'none'});
+	});
 });
