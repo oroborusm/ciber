@@ -265,9 +265,19 @@ ul.product_list
 			background: transparent
 			border: 0
 ul.product_list.grid > li
+	min-height: 380px
+	margin-bottom: 16px
 	.product-container
 		.product-image-container
 			border: 0
+@media screen and (max-width: 990px)
+	ul.product_list.grid > li
+		min-height: 305px
+	.right-block
+		padding 0
+@media screen and (max-width: 770px)
+	ul.product_list.grid > li
+		min-height: 390px
 .user__info
 	height: 55px
 	padding: 5px 10px
