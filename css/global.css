@@ -5717,7 +5717,7 @@ textarea {
   resize: none; }
 
 #header {
-  z-index: 5003; }
+  z-index: 20; }
 
 .columns-container {
   background: #fff; }

@@ -66,6 +66,9 @@
 			</div>
 		{/if}
 
+		<div class="news">
+			{include file="$tpl_dir./modules/blocknewsletter/blocknewsletter.tpl"}
+		</div>
 		<div id="page">
 
 			{counter name=active_overlay assign=active_overlay}
@@ -214,16 +217,17 @@
 							</div>
 						</div>
 					{/if}
-					{capture name='displayNav'}{hook h='displayNav'}{/capture}
-					{if $smarty.capture.displayNav}
-						<div class="nav">
-							<div class="container">
-								<div class="row">
-									<nav>{$smarty.capture.displayNav}</nav>
-								</div>
+
+					<div class="nav pop">
+						<div class="container">
+							<div class="row">
+								<nav>
+									<h2><span>SUSCRÍBETE</span> AQUÍ Y <span>GANA</span> UNO DE LOS <span>alguna cosita</span></h2>
+									<button id="entrar">ENTRAR</button>
+								</nav>
 							</div>
 						</div>
-					{/if}
+					</div>
 					<div class="gradient__to__bottom">
 						<div class="container">
 							<div class="row">

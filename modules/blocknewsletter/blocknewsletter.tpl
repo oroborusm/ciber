@@ -24,6 +24,7 @@
 *}
 <!-- Block Newsletter module-->
 <div id="newsletter_block_left" class="block">
+	<div id="close" class="cierra__news"></div>
 	<h4>{l s='Newsletter' mod='blocknewsletter'}</h4>
 	<div class="block_content">
 		<form action="{$link->getPageLink('index', null, null, null, false, null, true)|escape:'html':'UTF-8'}" method="post">

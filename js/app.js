@@ -13,4 +13,16 @@ $(function(){
 			$('.modal').removeClass('visible');
 		});
 	});
+	$('#entrar').on('click', function(){
+		$('.news').addClass('activo')
+	});
+	$('#close').on('click', function(){
+		$('.news').removeClass('activo')
+	});
+	$('.news').on('click', function(){
+		$('.news').removeClass('activo')
+	});
+	$('.block').on('click', function(e){
+		e.stopPropagation();
+	});
 });

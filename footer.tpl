@@ -39,7 +39,6 @@
 	<script type="text/javascript" src="{$js_uri|escape:'html':'UTF-8'}"></script>
 	{/foreach}
 {/if}
-<script src="{$js_dir}product.js"></script>
 <script src="{$js_dir}app.js"></script>
 
 	</body>
