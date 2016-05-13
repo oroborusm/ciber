@@ -230,8 +230,8 @@
 					</div>
 					<div class="gradient__to__bottom">
 						<div class="container">
-							<div class="row">
-								<div class="col-xs-3 logo__ciberday">
+							<div class="row cabecera">
+								<div class="logo__ciberday">
 									<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502.73 103.15">
 										<g>
 											<path d="M233.9,100.31v57.25a0.74,0.74,0,0,0,.74.74h9a0.74,0.74,0,0,0,.74-0.74v-2.62a17.68,17.68,0,0,0,11.29,3.85c12.77,0,21-8.51,21-21.68s-8.25-21.67-21-21.67a17.85,17.85,0,0,0-11.29,3.76V88.14a0.74,0.74,0,0,0-.24-0.55,0.75,0.75,0,0,0-.57-0.18h-8.83a0.84,0.84,0,0,0-.82.73v12.17Zm21.35,25.27c6.55,0,11.12,4.74,11.12,11.53s-4.57,11.53-11.12,11.53-11-4.75-11-11.53S248.75,125.59,255.25,125.59Z" transform="translate(-67.72 -67.24)" style="fill: #0068ff"/>
@@ -262,7 +262,7 @@
 									</svg>
 
 								</div>
-								<div class="col-xs-6">
+								<div class="logo__nodriza">
 									<div id="header_logo" class="header_logo">
 										<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 206 119.73">
@@ -362,8 +362,8 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-xs-3">
-									<div class="row inline__info">
+								<div class="carrito__nodriza">
+									<div class="inline__info">
 										<div class="user__info clearfix">
 											{include file="$tpl_dir./modules/blockuserinfo/nav.tpl"}
 										</div>

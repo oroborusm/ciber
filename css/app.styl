@@ -8,6 +8,14 @@
 .carrito__list
 	svg
 		width: 30px
+.carrito__nodriza
+	width: 24%
+.carrito__nodriza
+.logo__ciberday
+.logo__nodriza
+	display: inline-block
+	vertical-align: middle
+
 .cart_block
 	.cart-buttons
 		a#button_order_cart
@@ -39,6 +47,8 @@
 		font-family: "FontAwesome"
 		font-size: 25px
 		line-height: 25px
+.col-lg-list
+	width: 20%
 .display__none
 	display: none
 .font__light
@@ -51,9 +61,10 @@
 	background: linear-gradient(#EAEAEA 1%, transparent 99%)
 .header_logo
 	margin: 0 auto
+	padding-top: 5px
 	width: 250px
 .inline__info
-	padding-top: 55px
+	//padding-top: 55px
 	text-align: right
 	.user__info
 	.right
@@ -90,9 +101,12 @@
 	right: 0
 	//pointer-events: none
 .logo__ciberday
-	padding-top: 55px
+	//padding-top: 55px
+	width: 24%
 	svg
 		max-width: 200px
+.logo__nodriza
+	width: 49%
 .news
 	background: rgba(black, 0.5);
 	//box-shadow: 2px 2px 5px rgba(black, 0.5)
@@ -142,6 +156,7 @@
 		button
 			background: #ff6700
 			border: 0
+			border-radius: 3px
 			color: white
 			font-size: 20px
 			font-weight: 600
@@ -166,6 +181,7 @@
 	text-align: right
 	vertical-align: middle
 .right-block
+	height 90px
 	padding: 0 10px
 	text-align: left
 	h5
@@ -217,6 +233,7 @@
 			font-family: 'Oswald', sans-serif
 			font-weight: 400
 .shopping_cart
+	float: initial !important
 	text-align: right
 	height: 55px
 	padding-top: 0 !important
@@ -265,21 +282,16 @@ ul.product_list
 			background: transparent
 			border: 0
 ul.product_list.grid > li
-	min-height: 380px
+	//min-height: 380px
 	margin-bottom: 16px
 	.product-container
 		.product-image-container
 			border: 0
 @media screen and (max-width: 990px)
-	ul.product_list.grid > li
-		min-height: 305px
 	.right-block
 		padding 0
-@media screen and (max-width: 770px)
-	ul.product_list.grid > li
-		min-height: 390px
 .user__info
-	height: 55px
+	//height: 55px
 	padding: 5px 10px
 	vertical-align: middle
 	width: calc(100% - 60px)
@@ -314,3 +326,73 @@ ul.product_list.grid > li
 			visibility: hidden
 .visible
 	display: block !important
+
+@media screen and (max-width: 990px)
+	.col-lg-list
+		width: 25%
+
+	.logo__ciberday
+		svg
+			width: 150px
+	.logo__nodriza
+		text-align: right
+@media screen and (max-width:770px)
+	.carrito__nodriza
+		padding-right: 5px
+		width: 49%
+	/*.inline__info
+	.logo__ciberday
+		padding-top: 20px*/
+	.logo__nodriza
+		width: 24%
+	.header_logo
+		margin: 0
+		width: 150px
+@media screen and (max-width:650px)
+	.cabecera
+		text-align: center
+	.carrito__nodriza
+		margin-top: 10px
+		padding-right: 0
+		width: 98%
+	.inline__info
+		text-align: center
+		.user__info
+			background: linear-gradient(#eaeaea 10%, transparent 60%)
+			box-shadow: 0 0 10px rgba(0,0,0,0.3)
+			border-radius: 10px
+			height: 45px
+			padding: 0 15px
+			width: initial
+			.login
+				line-height: 45px
+	.logo__ciberday
+		text-align: right
+		width: 49%
+	.logo__nodriza
+		width: 49%
+	.pop
+		nav
+			button
+				font-size: 90%
+			h2
+				font-size: 90%
+				span
+					font-size: 90%
+	.shopping_cart
+		height: 45px
+		width: 45px
+		.cart__button 
+			height: 45px
+			.ajax_cart_no_product
+			.ajax_cart_quantity 
+				height: 20px
+				line-height: 20px
+				right: -5px
+				top: -5px
+				width: 20px
+@media screen and (max-width:480px)
+	.col-xs-12
+		width: 100%
+	ul.product_list li
+		border-right: 0
