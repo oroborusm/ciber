@@ -800,6 +800,11 @@ ul.product_list.grid > li .product-container .product-image-container {
     width: 20px;
   }
 }
+@media screen and (max-width: 1300px) {
+  .col-lg-list {
+    width: 25%;
+  }
+}
 @media screen and (max-width: 480px) {
   .col-xs-12 {
     width: 100%;
