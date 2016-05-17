@@ -36,7 +36,7 @@
 	<div id="opc_account" class="opc-main-block">
 		<div id="opc_account-overlay" class="opc-overlay" style="display: none;"></div>
 {/if}
-<div class="addresses clearfix">
+<div class="addresses clearfix direccion">
 	<div class="row">
 		<div class="col-xs-12 col-sm-6">
 			<div class="address_delivery select form-group selector1">
@@ -78,11 +78,11 @@
 	</div> <!-- end row -->
 	<div class="row">
 		<div class="col-xs-12 col-sm-6"{if $cart->isVirtualCart()} style="display:none;"{/if}>
-			<ul class="address item box" id="address_delivery">
+			<ul class="address item box no__color no__padding no__border__color" id="address_delivery">
 			</ul>
 		</div>
 		<div class="col-xs-12 col-sm-6">
-			<ul class="address alternate_item{if $cart->isVirtualCart()} full_width{/if} box" id="address_invoice">
+			<ul class="address alternate_item{if $cart->isVirtualCart()} full_width{/if} box no__color no__padding no__border__color" id="address_invoice">
 			</ul>
 		</div>
 	</div> <!-- end row -->
