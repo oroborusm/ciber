@@ -36,11 +36,8 @@
 		<h1 class="page-heading step-num"><span>1</span> {l s='Addresses'}</h1>
 		<div id="opc_account-overlay" class="opc-overlay" style="display: none;"></div>
 {/if}
-<<<<<<< HEAD
-<div class="addresses">
-=======
+
 <div class="addresses clearfix direccion">
->>>>>>> c062eab7a870412bc0c8d9e6597f9838367866fc
 	<div class="row">
 		<div class="col-xs-12"{if $cart->isVirtualCart()} style="display:none;"{/if}>
 			<ul class="address item box" id="address_delivery">
@@ -90,9 +87,7 @@
 			</div>
 		</div>
 	</div> <!-- end row -->
-<<<<<<< HEAD
 	<!-- <p class="address_add submit">
-=======
 	<div class="row">
 		<div class="col-xs-12 col-sm-6"{if $cart->isVirtualCart()} style="display:none;"{/if}>
 			<ul class="address item box no__color no__padding no__border__color" id="address_delivery">
@@ -103,8 +98,7 @@
 			</ul>
 		</div>
 	</div> <!-- end row -->
-	<p class="address_add submit">
->>>>>>> c062eab7a870412bc0c8d9e6597f9838367866fc
+	<!-- <p class="address_add submit">
 		<a href="{$link->getPageLink('address', true, NULL, "back={$back_order_page}?step=1{if $back}&mod={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Add'}" class="button button-small btn btn-default">
 			<span>{l s='Add a new address'}<i class="icon-chevron-right right"></i></span>
 		</a>

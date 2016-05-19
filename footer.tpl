@@ -31,6 +31,9 @@
 				</div><!-- #columns -->
 			</div><!-- .columns-container -->
 		</div><!-- #page -->
+		<footer>
+			{include file="$tpl_dir./content-footer.tpl"}
+		</footer>
 {/if}
 {include file="$tpl_dir./global.tpl"}
 {if isset($js_defer) && !$js_defer && isset($js_files) && isset($js_def)}
