@@ -6,7 +6,7 @@
 	box-sizing: border-box
 	font-smoothing: antialiased
 .activo
-	top: 0%
+	top: 0% !important
 .address_update
 	a
 		background: #ff6700 !important
@@ -20,6 +20,8 @@
 				background: #f8b302 !important
 .ancho__50
 	width: 49%
+.block__important
+	display: block !important
 .box-cart-bottom
 	background: none
 	box-shadow: none
@@ -42,6 +44,12 @@
 .breadcrumb
 	display: block
 	text-align: center
+.button.button-medium
+	background: white
+	border: 0
+	span
+		background: #ff6700
+		border: 0
 .carrito__list
 	svg
 		width: 30px
@@ -55,9 +63,10 @@
 .cart_avail
 	span
 		background-color: white
-		border: 0
+		border: 1px solid #36943e
+		border-radius: 3px
 		color: #36943e
-		text-decoration: underline
+		//text-decoration: underline
 .cart_block
 	.cart-buttons
 		a#button_order_cart
@@ -75,7 +84,7 @@
 		.price
 			padding: 0
 .cart__of
-	font-family: 'Oswald', sans-serif
+	font-family: 'Roboto Condensed', sans-serif
 	font-size: 16px
 	margin: 0
 	text-transform: capitalize
@@ -143,12 +152,17 @@
 	vertical-align: top
 .iva__nod
 	display: block
-	//font-family: 'Oswald', sans-serif
+	//font-family: 'Roboto Condensed', sans-serif
 	font-weight: lighter
 	font-size: 13px
 	padding-left: 10px
 	//text-align: center
 	text-transform: uppercase
+#layer_cart
+	.layer_cart_product
+		.title
+			color: #FF6700
+			font-family: 'Roboto Condensed', sans-serif
 .left-block
 	position: relative
 	.discount__box
@@ -165,7 +179,7 @@
 			border 0
 			color white
 			display block
-			font-family: 'Oswald', sans-serif
+			font-family: 'Roboto Condensed', sans-serif
 			font-size: 24px
 			line-height: 65px
 			padding 0
@@ -227,8 +241,37 @@
 				border: 0
 				line-height: 40px
 				padding: 0
+.news__title
+	background: transparent !important
+	border-top: 0 !important
+	color: #f6f6f6 !important
+	font-size: 18px !important
+	padding: 0 !important
 .no__padding
 	padding: 0
+.order_carrier_content
+	.delivery_options_address
+		.carrier_title
+			color: #555454
+			font-family: 'Roboto Condensed', sans-serif
+			font-size: 16px
+			font-weight: normal
+			margin: 0
+			text-transform: uppercase
+.one__percent
+	margin-left: 1%
+#opc_account
+#order-opc
+	h3
+		font-family: 'Roboto Condensed', sans-serif
+		font-size: 16px
+		font-weight: normal
+		margin: 0
+		padding: 0 0 10px 0
+	.page-heading.step-num
+		span
+			color: #FF6700
+			line-height: 37px
 #order-detail-content
 	#cart_summary
 		tfoot
@@ -236,23 +279,29 @@
 				.price
 					#total_price
 						color: #ff0800
-						font-family: 'Oswald', sans-serif
+						font-family: 'Roboto Condensed', sans-serif
 						font-weight: normal
 .our_price_display
 	width: 100%
 	.price
 		color: #ff6700
 		display: block
-		font-family: 'Oswald', sans-serif
+		font-family: 'Roboto Condensed', sans-serif
 		font-size: 60px
 		font-weight: 100
 		line-height: 60px
 		width: 100%
+.page-heading
+	font-family: 'Roboto Condensed', sans-serif
+	font-size: 20px
+	font-weight: 100
+	margin-bottom: 20px
+	padding: 0
 .page-product-box
 	h3
 		border: 0
 		//border-bottom: 1px solid #5b5b5f
-		font-family: 'Oswald', sans-serif
+		font-family: 'Roboto Condensed', sans-serif
 		font-size: 20px
 		font-weight: 100
 		padding: 0
@@ -327,7 +376,7 @@
 		font-weight: 100
 	label
 	span
-		font-family: 'Oswald', sans-serif
+		font-family: 'Roboto Condensed', sans-serif
 		margin: 0
 		text-transform: uppercase
 	.editable
@@ -383,7 +432,7 @@
 		padding: 0 !important
 		a
 			font-size: 16px
-			font-family: 'Oswald', sans-serif
+			font-family: 'Roboto Condensed', sans-serif
 			font-weight: 100
 	.button-containerr
 		//background: #f8b302
@@ -411,7 +460,7 @@
 		.old-price
 			color: #666
 			font-size: 13px
-			//font-family: 'Oswald', sans-serif
+			//font-family: 'Roboto Condensed', sans-serif
 			font-weight: 400
 			margin: 10px auto
 			text-decoration: none
@@ -419,9 +468,9 @@
 				//background: #ff6700
 				border-radius: 3px
 				color: #777
-				font-family: 'Oswald', sans-serif
+				font-family: 'Roboto Condensed', sans-serif
 				font-size: 16px
-				font-weight: 100
+				font-weight: bold
 				//padding: 5px
 				text-decoration: underline
 				vertical-align: baseline
@@ -431,13 +480,13 @@
 			color: red
 			display: none
 			font-size: 13px
-			font-family: 'Oswald', sans-serif
+			font-family: 'Roboto Condensed', sans-serif
 			font-weight: 400
 		.product-price
 			color: #ff6700
 			font-size: 24px
-			font-family: 'Oswald', sans-serif
-			font-weight: 400
+			font-family: 'Roboto Condensed', sans-serif
+			font-weight: bold
 .right__nod
 	right: 0
 .selector__nod
@@ -518,6 +567,12 @@
 			border: 3px solid #F8B302
 .top-hr
 	display: none
+.txt__big
+	font-family: 'Roboto Condensed', sans-serif !important
+	font-size: 18px
+.txt__nod
+	color: #ff6700
+	font-family: 'Roboto Condensed', sans-serif
 #usefull_link_block
 	display: none
 ul.product_list
@@ -536,18 +591,17 @@ ul.product_list
 			padding: 0
 		.label-success
 			background: transparent
-			border: 0
-			color: #36943e
-			text-decoration: underline
+			border: 1px solid #F8B302
+			border-radius: 3px
+			color: #FF7300
+			padding: 5px
+			//text-decoration: underline
 ul.product_list.grid > li
 	//min-height: 380px
 	margin-bottom: 16px
 	.product-container
 		.product-image-container
 			border: 0
-@media screen and (max-width: 990px)
-	.right-block
-		padding 0
 .user__info
 	//height: 55px
 	padding: 5px 10px
@@ -565,26 +619,27 @@ ul.product_list.grid > li
 					visibility: visible
 		a
 			color: #666
-			font-family: 'Oswald', sans-serif
+			font-family: 'Roboto Condensed', sans-serif
 			font-size: 16px
 			padding: 0
 			span
 				color: #666
-				font-family: 'Oswald', sans-serif
+				font-family: 'Roboto Condensed', sans-serif
 				text-transform: uppercase
 			&:hover
 				background: transparent
 		.login
-			font-family: 'Oswald', sans-serif
+			font-family: 'Roboto Condensed', sans-serif
 			font-weight: 100
-			text-transform: full-width
+			//text-transform: full-width
 		.logout
 			opacity: 0
 			transition: .25s
 			visibility: hidden
 .visible
 	display: block !important
-
+.width__6
+	width: 49%
 @media screen and (max-width: 990px)
 	.col-lg-list
 		width: 25%
@@ -594,6 +649,10 @@ ul.product_list.grid > li
 			width: 150px
 	.logo__nodriza
 		text-align: right
+	.right-block
+		padding 0
+	.width__6
+		width: 100%
 @media screen and (max-width:770px)
 	.carrito__nodriza
 		padding-right: 5px
@@ -657,6 +716,8 @@ ul.product_list.grid > li
 		width: 100%
 	ul.product_list li
 		border-right: 0
+		float: left
+		width: 50%
 	#layer_cart
 		.layer_cart_product
 			padding-bottom: 5px !important
@@ -666,3 +727,7 @@ ul.product_list.grid > li
 				margin: 0 auto !important
 		.layer_cart_cart
 			padding: 21px 30px 90px 30px !important
+
+@media screen and (max-width:400px)
+	ul.product_list li
+		width: 100%

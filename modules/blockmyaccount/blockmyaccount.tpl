@@ -68,9 +68,9 @@
 			{$HOOK_BLOCK_MY_ACCOUNT}
 		</ul>
 		<div class="logout">
-			<a 
-			class="btn btn-default button button-small" 
-			href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" 
+			<a
+			class="btn btn-default button button-small"
+			href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}"
 			title="{l s='Sign out' mod='blockmyaccount'}">
 				<span>{l s='Sign out' mod='blockmyaccount'}<i class="icon-chevron-right right"></i></span>
 			</a>
