@@ -1,7 +1,7 @@
 <div id="opc_new_account" class="opc-main-block">
 	<div id="opc_new_account-overlay" class="opc-overlay" style="display: none;"></div>
 	<h1 class="page-heading step-num"><span>1</span> {l s='Account'}</h1>
-	<form action="{$link->getPageLink('authentication', true, NULL, "back=order-opc")|escape:'html':'UTF-8'}" method="post" id="login_form" class="box">
+	<form action="{$link->getPageLink('authentication', true, NULL, "back=order-opc")|escape:'html':'UTF-8'}" method="post" id="login_form" class="box col-xs-12 col-sm-6">
 		<fieldset>
 			<h3 class="page-subheading">{l s='Already registered?'}</h3>
 			<p><a href="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" id="openLoginFormBlock">&raquo; {l s='Click here'}</a></p>
@@ -25,18 +25,18 @@
 			</div>
 		</fieldset>
 	</form>
-	<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="new_account_form" class="std" autocomplete="on" autofill="on">
+	<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="new_account_form" class="std col-xs-12 col-sm-6" autocomplete="on" autofill="on">
 		<fieldset>
 			<div class="box">
 				<h3 id="new_account_title" class="page-subheading">{l s='New Customer'}</h3>
 				<div id="opc_account_choice" class="row">
-					<div class="col-xs-12 col-md-6">
+					<div class="col-xs-12">
 						<p class="title_block">{l s='Instant Checkout'}</p>
 						<p class="opc-button">
 							<button type="submit" class="btn btn-default button button-medium exclusive" id="opc_guestCheckout"><span>{l s='Guest checkout'}</span></button>
 						</p>
 					</div>
-					<div class="col-xs-12 col-md-6">
+					<div class="col-xs-12">
 						<p class="title_block">{l s='Create your account today and enjoy:'}</p>
 						<ul class="bullet">
 							<li>- {l s='Personalized and secure access'}</li>
