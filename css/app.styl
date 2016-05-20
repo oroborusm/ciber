@@ -129,6 +129,19 @@
 		line-height: 25px
 .col-lg-list
 	width: 20%
+.contact__nod
+	background: #434142
+	margin-top: 16px
+	padding: 16px 0
+	width: 100%
+	.contact__nod__ul
+		max-width: 1200px
+		text-align: center
+		li
+			p
+				color: white
+				line-height: 18px
+				margin: 0
 .content__footer
 	margin: 0 auto
 	max-width: 1200px
@@ -137,6 +150,7 @@
 		padding: 0
 		width: 100%
 		li
+			margin-bottom: 16px
 			text-align: center
 			svg
 				width: 140px
@@ -300,6 +314,14 @@ footer
 	background: transparent !important
 .no__padding
 	padding: 0
+.oficial__nod
+	background: #f6f6f6
+	margin: 16px auto
+	padding: 0
+	text-align: center
+	max-width: 100%
+	.oficial__nod_img
+		width: 200px
 .order_carrier_content
 	.delivery_options_address
 		.carrier_title
@@ -767,9 +789,20 @@ ul.product_list.grid > li
 	.std
 		padding-left: 0 !important
 		padding-right: 0 !important
+@media screen and (max-width:650px)
+	.content__footer
+		.content__footer_ul
+			li 
+				svg
+					width: 100px
 @media screen and (max-width:480px)
 	.col-xs-12
 		width: 100%
+	.content__footer
+		.content__footer_ul
+			li 
+				svg
+					width: 80px
 	ul.product_list li
 		border-right: 0
 		float: left
@@ -783,7 +816,19 @@ ul.product_list.grid > li
 				margin: 0 auto !important
 		.layer_cart_cart
 			padding: 21px 30px 90px 30px !important
-
+@media screen and (max-width:430px)
+	.pop
+		nav
+			button
+				margin-left: 0
 @media screen and (max-width:400px)
 	ul.product_list li
 		width: 100%
+@media screen and (max-width:340px)
+	.contact__nod
+		.contact__nod__ul
+			li
+				p
+					font-size: 13px
+	.header_logo
+		width: 130px

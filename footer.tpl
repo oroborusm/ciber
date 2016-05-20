@@ -32,7 +32,23 @@
 			</div><!-- .columns-container -->
 		</div><!-- #page -->
 		<footer>
-			{include file="$tpl_dir./content-footer.tpl"}
+			{if isset($HOOK_HOME)}
+				<figure class="oficial__nod">
+					<img class="oficial__nod_img" src="{$img_dir}empresa-oficial.png" alt="empresa oficial ciberday 2016">
+				</figure>
+				{include file="$tpl_dir./content-footer.tpl"}
+			{/if}
+			<div class="contact__nod">
+				<ul class="contact__nod__ul">
+					<li>
+						<p>Diagonal Oriente 1355 Ñuñoa - Santiago Chile</p>
+					</li>
+					<li>
+						<p>Telefono : +56 2 2379 2187 de 9hrs a 18hrs</p>
+					</li>
+					<li></li>
+				</ul>
+			</div>
 		</footer>
 {/if}
 {include file="$tpl_dir./global.tpl"}
