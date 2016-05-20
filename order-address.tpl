@@ -34,7 +34,8 @@
 	{assign var="back_order_page" value="order-opc.php"}
 	<div id="opc_account" class="opc-main-block  width__6 inline__block">
 		<h1 class="page-heading step-num"><span>1</span> {l s='Addresses'}</h1>
-		<div id="opc_account-overlay" class="opc-overlay" style="display: none;"></div>
+		<div id="opc_account-overlay" class="opc-overlay" style="display: none;">
+	</div>
 {/if}
 
 <div class="addresses clearfix direccion">

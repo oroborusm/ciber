@@ -28,4 +28,8 @@ $(function(){
 	$('.alert , .alert-danger').on('click', function(){
 		$('.alert , .alert-danger').css({'display' : 'none'});
 	});
+	$('.toggle__nod').on('click', function(){
+		$('#opc_account_form').removeClass('invisible')
+		$('.toggle__nod').hide()
+	});
 });
