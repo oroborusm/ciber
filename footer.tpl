@@ -32,12 +32,10 @@
 			</div><!-- .columns-container -->
 		</div><!-- #page -->
 		<footer>
-			{if isset($HOOK_HOME)}
-				<figure class="oficial__nod">
-					<img class="oficial__nod_img" src="{$img_dir}empresa-oficial.png" alt="empresa oficial ciberday 2016">
-				</figure>
-				{include file="$tpl_dir./content-footer.tpl"}
-			{/if}
+			<figure class="oficial__nod">
+				<img class="oficial__nod_img" src="{$img_dir}empresa-oficial.png" alt="empresa oficial ciberday 2016">
+			</figure>
+			{include file="$tpl_dir./content-footer.tpl"}
 			<div class="contact__nod">
 				<ul class="contact__nod__ul">
 					<li>
