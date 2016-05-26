@@ -32,4 +32,8 @@ $(function(){
 		$('#opc_account_form').removeClass('invisible')
 		$('.toggle__nod').hide()
 	});
+	$('#each__title > h1').each(function(i){
+		i++;
+		$(this).attr('id','obj'+i);
+	});
 });

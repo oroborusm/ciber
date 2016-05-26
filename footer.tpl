@@ -44,7 +44,9 @@
 					<li>
 						<p>Telefono : +56 2 2379 2187 de 9hrs a 18hrs</p>
 					</li>
-					<li></li>
+					<li>
+						<img src="{$img_dir}pagos.png" alt="medios de pagos asociados" class="pagos">
+					</li>
 				</ul>
 			</div>
 		</footer>
