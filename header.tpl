@@ -82,7 +82,14 @@
 							</div>
 						</div>
 					{/if}
-
+					<div class="toolmania__nod">
+						<a href="http://www2.toolmania.cl/">
+							<svg id="FRONT" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.24 28.81">
+								<path d="M734.47,176.45l-10.45-6a3.17,3.17,0,0,0-3.17,0l-10.45,6a3.17,3.17,0,0,0-1.58,2.74v12.07A3.17,3.17,0,0,0,710.4,194l8.31,4.8v-9.94a7.16,7.16,0,0,1,0-13.37v6.69h7.45v-6.67a7.13,7.13,0,0,1,0,13.34v10l8.31-4.8a3.17,3.17,0,0,0,1.58-2.74V179.19A3.17,3.17,0,0,0,734.47,176.45Z" transform="translate(-708.82 -169.99)" style="fill:#ff6700"/>
+							</svg>
+							<p>visita nuestro sitio regular</p>
+						</a>
+					</div>
 					<div class="nav pop">
 						<div class="container">
 							<div class="row">

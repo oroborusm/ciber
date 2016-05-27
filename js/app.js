@@ -13,6 +13,12 @@ $(function(){
 			$('.modal').removeClass('visible');
 		});
 	});
+	$('#header_user_info_button').on('click', function(){
+		$('.logged').addClass('user_menu')
+	});
+	$('.cierra__menu_usuario').on('click', function(){
+		$('.logged').removeClass('user_menu')
+	});
 	$('#entrar').on('click', function(){
 		$('.news').addClass('activo')
 	});

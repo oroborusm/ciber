@@ -38,7 +38,7 @@
 					</g>
 				</svg>
 				<div class="cont__footer">
-					<p>hola tarola</p>
+					<p>Despacho Cyberday</p>
 				</div>
 			</a>
 
@@ -74,7 +74,7 @@
 					</g>
 				</svg>
 				<div class="cont__footer">
-					<p>hola tarola</p>
+					<p>Términos y condiciones Cyberday</p>
 				</div>
 			</a>
 
@@ -100,7 +100,7 @@
 					</g>
 				</svg>
 				<div class="cont__footer">
-					<p>hola tarola</p>
+					<p>SEGURIDAD SSL</p>
 				</div>
 			</a>
 
@@ -121,7 +121,7 @@
 					</g>
 				</svg>
 				<div class="cont__footer">
-					<p>hola tarola</p>
+					<p>GARANTIAS</p>
 				</div>
 			</a>
         </li>
