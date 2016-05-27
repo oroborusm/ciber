@@ -461,7 +461,7 @@ p.payment_module
 		padding: 10px
 		text-align: center
 		&:hover
-			background: rgba(#f8b302, .7)
+			background: rgba(#f8b302, .7) !important
 .pb-center-column
 	h1
 		//background: linear-gradient(#EAEAEA 1%, transparent 99%)
@@ -879,24 +879,16 @@ ul.product_list.grid > li
 .txt__big.news__title
 	&:after
 		content: ''
-		
-@keyframes pulse {
-	from {
-		transform: scale3d(1, 1, 1);
-	}
 
-	50% {
-		transform: scale3d(1.05, 1.05, 1.05);
-	}
-
-	to {
-		transform: scale3d(1, 1, 1);
-	}
-}
-
-.pulse {
-  animation-name: pulse;
-}
+.order_carrier_content
+	.box
+		border: 2px solid #ff6700 !important
+		.checkbox
+			.checker
+				span
+					border: 1px solid #ff6700 !important
+					padding: 2px
+				//input
 @media screen and (max-width: 990px)
 	.col-lg-list
 		width: 25%
