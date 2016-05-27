@@ -1,7 +1,7 @@
 <div class="content__footer">
     <ul class="row content__footer_ul">
-        <li class="col-xs-6 col-sm-3">
-			<a href="http://localhost:8888/nodriza/content/3-terminos-y-condiciones-de-uso#obj1" class="scroll">
+        <li class="col-sm-3">
+			<a href="http://www.toolmania.cl/content/3-terminos-y-condiciones-de-uso#obj1" class="scroll">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 134 145">
 					<g style="isolation: isolate">
 						<g id="FRONT">
@@ -43,8 +43,8 @@
 			</a>
 
         </li>
-        <li class="col-xs-6 col-sm-3">
-			<a href="http://localhost:8888/nodriza/content/3-terminos-y-condiciones-de-uso#obj2">
+        <li class="col-sm-3">
+			<a href="http://www.toolmania.cl/content/3-terminos-y-condiciones-de-uso#obj2">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 133 145">
 					<g style="isolation: isolate">
 						<g id="FRONT">
@@ -79,34 +79,8 @@
 			</a>
 
         </li>
-        <li class="col-xs-6 col-sm-3">
-			<a href="http://localhost:8888/nodriza/content/3-terminos-y-condiciones-de-uso#obj3">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 133 145">
-					<g style="isolation: isolate">
-						<g id="FRONT">
-							<g>
-								<image width="133" height="145" xlink:href="data:image/png;base64,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" style="opacity: 0.27;mix-blend-mode: multiply"/>
-								<g>
-									<path d="M933.46,1036a13.66,13.66,0,0,0-7-11.86L880.1,998a14.32,14.32,0,0,0-14,0l-45.81,26.12c-4.34,2.45-6.51,7-6.51,11.87v52.25c0,3.1.57,6,2.46,8.42a13,13,0,0,0,3.95,3.63l46.25,26a14.2,14.2,0,0,0,14,0l46.24-26.2a13.63,13.63,0,0,0,7-11.88Z" transform="translate(-808.06 -991.71)" style="fill: #f50"/>
-									<g>
-										<path d="M889.16,1062.8l-3.52-18.55a2,2,0,0,0-2.39-1.66l-2.83.58c-1.52-8.41-2.18-10.65-2.25-10.89l-0.05-.17L878,1032c-2.87-6-7.64-8.44-13.43-6.87-4.56,1.24-9.3,5.78-9.33,11.22a48.84,48.84,0,0,0,2,11.63l-2.59.53a2.12,2.12,0,0,0-1.6,2.48l3.52,18.55a2,2,0,0,0,2.39,1.66l28.58-5.87A2.12,2.12,0,0,0,889.16,1062.8Zm-27.8-17.13a1.56,1.56,0,0,1-1.26-1.55,1.59,1.59,0,0,1,.59-1.24,32.46,32.46,0,0,1-.86-6.55c0-2.75,2.73-5.81,5.94-6.68,3.58-1,6.24.41,8.13,4.23,0.12,0.46.5,2,1.2,5.54a1.55,1.55,0,0,1,1.32,1.56,1.58,1.58,0,0,1-.76,1.37l0.32,1.74L861.72,1047C861.62,1046.65,861.49,1046.19,861.36,1045.67Zm8.69,14s-0.16-3.73-.08-4.11a0.94,0.94,0,0,0-.56-0.72s-0.6,0-1-1.71c-0.56-2.73,1.83-3,1.83-3a1.94,1.94,0,0,1,2.63,1.32c0.56,2.07-.08,2.48-0.48,2.9a0.59,0.59,0,0,0,0,.83l1.43,3.64Z" transform="translate(-808.06 -991.71)" style="fill: #fff"/>
-										<path d="M878.71,1076.63l5.55-1.49s-1.25-2.86-3-3.94c-1.54-1-5.43-1.58-10.17,1-5.08,2.73-2.6,8.07-2.6,8.07a7.11,7.11,0,0,0,5.85,2.79c3.94-.06,5.85.62,6.09,1.86a1.74,1.74,0,0,1-1.73,2.17c-1.13,0-2.39.56-4.24-2.36l-6,1.3s2,4.69,5.55,5.53,8.45-.12,10.86-3.29a7.43,7.43,0,0,0,1-7.27s-1-3.47-7.16-3.35c-5.25.11-4.71-1-4.65-1.74,0,0,.43-1,2.39-0.87A2.24,2.24,0,0,1,878.71,1076.63Z" transform="translate(-808.06 -991.71)" style="fill: #fff"/>
-										<path d="M859.62,1080.35l5.55-1.49s-1.25-2.86-3-3.94c-1.54-1-5.43-1.58-10.17,1-5.08,2.73-2.6,8.07-2.6,8.07a7.11,7.11,0,0,0,5.85,2.79c3.94-.06,5.85.62,6.09,1.86a1.74,1.74,0,0,1-1.73,2.17c-1.13,0-2.39.56-4.24-2.36l-6,1.3s2,4.69,5.55,5.53,8.45-.12,10.86-3.29a7.43,7.43,0,0,0,1-7.27s-1-3.47-7.16-3.35c-5.25.11-4.71-1-4.65-1.74,0,0,.43-1,2.39-0.87A2.24,2.24,0,0,1,859.62,1080.35Z" transform="translate(-808.06 -991.71)" style="fill: #fff"/>
-										<path d="M905,1085.59l-0.93-5.11a0.22,0.22,0,0,0-.26-0.18l-8.62,1.7a0.22,0.22,0,0,1-.26-0.18l-2.5-13.73a0.22,0.22,0,0,0-.26-0.18l-5.56,1.1a0.23,0.23,0,0,0-.17.27l3.51,19.29a0.22,0.22,0,0,0,.26.18l14.62-2.88A0.23,0.23,0,0,0,905,1085.59Z" transform="translate(-808.06 -991.71)" style="fill: #fff"/>
-									</g>
-								</g>
-							</g>
-						</g>
-					</g>
-				</svg>
-				<div class="cont__footer">
-					<p>SEGURIDAD SSL</p>
-				</div>
-			</a>
-
-        </li>
-        <li class="col-xs-6 col-sm-3">
-			<a href="http://localhost:8888/nodriza/content/3-terminos-y-condiciones-de-uso#obj4">
+        <li class="col-sm-3">
+			<a href="http://www.toolmania.cl/content/3-terminos-y-condiciones-de-uso#obj3">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 133 145">
 					<g style="isolation: isolate">
 						<g id="FRONT">

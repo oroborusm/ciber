@@ -155,8 +155,9 @@
 .col-lg-list
 	width: 20%
 .contact__nod
-	background: #D1D1D1
-	margin-top: 16px
+	//background: #D1D1D1
+	//background: rgba(white, .5)
+	margin-top: 56px
 	padding: 16px 0
 	width: 100%
 	.contact__nod__ul
@@ -174,10 +175,14 @@
 	.content__footer_ul
 		margin: 0
 		padding: 0
+		text-align: center
 		width: 100%
 		li
+			display: inline-block
+			float: none
 			margin-bottom: 16px
 			text-align: center
+			vertical-align: middle
 			svg
 				width: 140px
 			.cont__footer
@@ -376,8 +381,8 @@ footer
 .oficial__nod
 	background: #E8E8E8
 	background: url('http://www.cyberday.cl/images/pattern.png'), linear-gradient(top, rgba(198,194,202,1) 0%, rgba(198,194,202,1) 10%, rgba(white,1) 100%)
-	margin: 16px auto 25px auto
-	padding: 20px 0
+	margin: 16px auto 0 auto
+	padding: 20px 0 0 0
 	text-align: center
 	max-width: 100%
 	.oficial__nod_img
@@ -446,6 +451,9 @@ footer
 		padding: 0 !important
 .pagos
 	max-width: 300px
+.pagos__footer
+	img
+		background: rgba(white, .4)
 p.payment_module
 	a
 		background: #e8e8e8 !important
@@ -489,7 +497,7 @@ p.payment_module
 			text-transform: uppercase
 			span
 				color: white
-				font-size: 18px
+				font-size: 15px
 				font-weight: 600
 .porcentaje__nod_prod
 	background: #ff6700 !important
@@ -654,6 +662,8 @@ p.payment_module
 .rte
 	h1
 		color: #FF6700
+		font-size: 25px
+		font-weight: 600
 .selector__nod
 	.attribute_list
 		.selector
@@ -950,8 +960,10 @@ ul.product_list.grid > li
 	.content__footer
 		.content__footer_ul
 			li
+				width: 49%
 				svg
 					width: 100px
+				
 @media screen and (max-width:480px)
 	.col-xs-12
 		width: 100%
@@ -974,6 +986,20 @@ ul.product_list.grid > li
 		.layer_cart_cart
 			padding: 21px 30px 90px 30px !important
 @media screen and (max-width:430px)
+	.box-cart-bottom
+		.buttons_bottom_block
+			.agrega__nod_prod
+				height: 30px
+				width: 100px
+				svg
+					width: 25px
+	.content__footer_ul
+		li
+			width: 100% !important
+	.our_price_display
+		.price
+			font-size: 30px
+			line-height: 30px
 	.pop
 		nav
 			button
@@ -981,6 +1007,8 @@ ul.product_list.grid > li
 @media screen and (max-width:400px)
 	ul.product_list li
 		width: 100%
+	.breadcrumb
+		display: none
 @media screen and (max-width:340px)
 	.contact__nod
 		.contact__nod__ul

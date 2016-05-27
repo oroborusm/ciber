@@ -32,23 +32,23 @@
 			</div><!-- .columns-container -->
 		</div><!-- #page -->
 		<footer>
+			{include file="$tpl_dir./content-footer.tpl"}
 			<figure class="oficial__nod">
 				<img class="oficial__nod_img" src="{$img_dir}empresa-oficial.png" alt="empresa oficial ciberday 2016">
+				<div class="contact__nod">
+					<ul class="contact__nod__ul">
+						<li>
+							<p>Diagonal Oriente 1355 Ñuñoa - Santiago Chile</p>
+						</li>
+						<li>
+							<p>Telefono : +56 2 2379 2187 de 9hrs a 18hrs</p>
+						</li>
+						<li class="pagos__footer">
+							<img src="{$img_dir}pagos.png" alt="medios de pagos asociados" class="pagos">
+						</li>
+					</ul>
+				</div>
 			</figure>
-			{include file="$tpl_dir./content-footer.tpl"}
-			<div class="contact__nod">
-				<ul class="contact__nod__ul">
-					<li>
-						<p>Diagonal Oriente 1355 Ñuñoa - Santiago Chile</p>
-					</li>
-					<li>
-						<p>Telefono : +56 2 2379 2187 de 9hrs a 18hrs</p>
-					</li>
-					<li>
-						<img src="{$img_dir}pagos.png" alt="medios de pagos asociados" class="pagos">
-					</li>
-				</ul>
-			</div>
 		</footer>
 {/if}
 {include file="$tpl_dir./global.tpl"}

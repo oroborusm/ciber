@@ -94,7 +94,7 @@
 						<div class="container">
 							<div class="row">
 								<nav>
-									<h2><span>SUSCRÍBETE</span> AQUÍ Y <span>GANA</span> UNO DE LOS <span>alguna cosita</span></h2>
+									<h2><span>Suscribete aqui</span> y recibe las <span>mejores ofertas.</span></h2>
 									<button id="entrar">ENTRAR</button>
 								</nav>
 							</div>
