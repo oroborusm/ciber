@@ -759,12 +759,18 @@ p.payment_module
 	text-align: center
 	//top: 0
 	width: 100%
+	a
+		&:hover
+			p
+				color: #f8b302
+				font-size: 11px
 	p
 		color: white
 		font-size: 10px
 		margin: 0
 		padding: 0
 		text-transform: uppercase
+		transition: .25s
 	p
 	svg
 		display: inline-block
@@ -873,6 +879,24 @@ ul.product_list.grid > li
 .txt__big.news__title
 	&:after
 		content: ''
+		
+@keyframes pulse {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.pulse {
+  animation-name: pulse;
+}
 @media screen and (max-width: 990px)
 	.col-lg-list
 		width: 25%
